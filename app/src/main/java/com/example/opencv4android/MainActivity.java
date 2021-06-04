@@ -4,7 +4,9 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.SurfaceView;
+import android.view.View;
 import android.view.WindowManager;
+import android.widget.Toast;
 
 import org.opencv.android.BaseLoaderCallback;
 import org.opencv.android.CameraActivity;
@@ -20,9 +22,8 @@ public class MainActivity extends CameraActivity implements CameraBridgeViewBase
     private static final String TAG = "OpenCV:Main";
 
     private CameraBridgeViewBase mOpenCvCameraView;
-    private boolean              mIsJavaCamera = true;
+    private boolean mIsJavaCamera = true;
     private MenuItem mItemSwitchCamera = null;
-
 
     private BaseLoaderCallback mLoaderCallback = new BaseLoaderCallback(this) {
         @Override
@@ -93,7 +94,12 @@ public class MainActivity extends CameraActivity implements CameraBridgeViewBase
 
     @Override
     public Mat onCameraFrame(CameraBridgeViewBase.CvCameraViewFrame inputFrame) {
-        Log.i("OpenCV:MainActivity", "Something happened!");
+        //Log.i("TAG", "Something happened!");
         return inputFrame.rgba();
+    }
+
+    // User response to take_picture FAB button
+    public void takePicture(View view) {
+        Log.d(TAG, "We got success here :-)");
     }
 }
