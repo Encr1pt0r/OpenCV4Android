@@ -1,6 +1,7 @@
 package com.example.opencv4android;
 
 import android.os.Bundle;
+import android.os.Environment;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.SurfaceView;
@@ -15,7 +16,9 @@ import org.opencv.android.LoaderCallbackInterface;
 import org.opencv.android.OpenCVLoader;
 import org.opencv.core.Mat;
 
+import java.text.SimpleDateFormat;
 import java.util.Collections;
+import java.util.Date;
 import java.util.List;
 
 public class MainActivity extends CameraActivity implements CameraBridgeViewBase.CvCameraViewListener2 {
@@ -48,7 +51,7 @@ public class MainActivity extends CameraActivity implements CameraBridgeViewBase
         setContentView(R.layout.activity_main);
 
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
-        mOpenCvCameraView = findViewById(R.id.CameraView);
+        mOpenCvCameraView = (MainActivityView) findViewById(R.id.CameraView);
         mOpenCvCameraView.setVisibility(SurfaceView.VISIBLE);
         mOpenCvCameraView.setCvCameraViewListener(this);
 
@@ -100,6 +103,12 @@ public class MainActivity extends CameraActivity implements CameraBridgeViewBase
 
     // User response to take_picture FAB button
     public void takePicture(View view) {
-        Log.d(TAG, "We got success here :-)");
+        Log.d(TAG, "Take picture event triggered");
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd_HH-mm-ss");
+        String currentDateandTime = sdf.format(new Date());
+        String fileName = Environment.getExternalStorageDirectory().getPath() +
+                "/sample_picture_" + currentDateandTime + ".jpg";
+        //mOpenCvCameraView.takePicture(fileName);
+        Toast.makeText(this, fileName + " saved", Toast.LENGTH_SHORT).show();
     }
 }
