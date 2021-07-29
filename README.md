@@ -2,7 +2,7 @@
 
 OpenCV is an open-source computer vision and machine learning library written in C++. It has support for languages like Python, MATLAB, Java and can be used with Windows, Linux, MacOS and Android.
 
-You can find more at [OpenCV offcial website](https://opencv.org/)
+You can find more at [OpenCV official website](https://opencv.org/)
 
 The aim of this project is to ascertain the viability of OpenCV as a platform for Java-literate novice mobile application developers for developing computer vision-based software.
 
