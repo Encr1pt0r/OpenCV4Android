@@ -2,13 +2,13 @@
 
 OpenCV is an open-source computer vision and machine learning library written in C++. It has support for languages like Python, MATLAB, Java and can be used with Windows, Linux, MacOS and Android.
 
-You can find more at [OpenCV offcial website](https://opencv.org/)
+You can find more at [OpenCV official website](https://opencv.org/)
 
-The purpose of this project is to develop a Android application that utlises OpenCV functions to perform computer vision with a usable interface.
+The aim of this project is to ascertain the viability of OpenCV as a platform for Java-literate novice mobile application developers for developing computer vision-based software.
 
 To clone/build this project yourself you require to import OpenCV into your own project using Android Studio. 
 
-Here are belew the steps to do so.
+Here are below the steps to do so.
 
 1. [Download OpenCV](https://opencv.org/releases/) from offcial website (select version 4.5.1 Android)
 2. Clone this project using Android Studio
